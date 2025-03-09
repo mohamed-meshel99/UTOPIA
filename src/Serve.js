@@ -3,38 +3,43 @@ import React, { useState, useEffect } from 'react';
 import './Serve.css'; // هذا الملف يحتوي على التنسيق
 
 const cardsData = [
-  { 
-    id: 1, 
-    image: '/serve/chat.jpg', 
-    text: 'Card 1 Text', 
+  {
+    id: 1,
+    image: '/serve/chat.jpg',
+    text: 'Card 1 Text',
     bgColor: '#6a0dad',  // بربل
-    title: 'الشات', 
-    description: 'هنا يمكنك التحدث مع الأطباء والمستخدمين الآخرين من خلال الرسائل النصية أو الصوتية.' ,
+    title: 'الشات',
+    description: 'هنا يمكنك التحدث مع الأطباء والمستخدمين الآخرين من خلال الرسائل النصية أو الصوتية.',
     smallImages: ['/animate/chat1.gif', '/animate/chat2.gif'],  // صور صغيرة على الجانبين
-    buttonText: 'ابدأ الدردشة',  // نص الزر
-    buttonClass: 'bubbly-button' // الكلاس الخاص بزر البابلين
+    buttonText:"قيد التطوير",  // نص الزر
+    buttonClass: 'bubbly-button', // الكلاس الخاص بزر البابلين
+    buttonLink: ""
+
   },
-  { 
-    id: 2, 
-    image: '/serve/games.PNG', 
-    text: 'Card 2 Text', 
+  {
+    id: 2,
+    image: '/serve/games.PNG',
+    text: 'Card 2 Text',
     bgColor: '#800000',  // نبيتي
-    title: 'الألعاب', 
-    description: 'خدمة الألعاب التي تساعد الأطفال على تعلم مهارات جديدة من خلال اللعب التفاعلي.' ,
+    title: 'الألعاب',
+    description: 'خدمة الألعاب التي تساعد الأطفال على تعلم مهارات جديدة من خلال اللعب التفاعلي.',
     smallImages: ['/animate/games1.gif', '/animate/games2.gif'],  // صور صغيرة على الجانبين
     buttonText: 'ابدأ اللعبة',  // نص الزر
-    buttonClass: 'game-button' // الكلاس الخاص بالزر الثاني
+    buttonClass: 'game-button',// الكلاس الخاص بالزر الثاني
+    buttonLink: "http://game-over.utopiaworld.site/"
   },
-  { 
-    id: 3, 
-    image: '/serve/edu.PNG', 
-    text: 'Card 3 Text', 
+  {
+    id: 3,
+    image: '/serve/edu.PNG',
+    text: 'Card 3 Text',
     bgColor: '#bfefff',  // بيبي بلو
-    title: 'التعليم', 
-    description: 'من خلال هذه الخدمة، يمكن للأطفال تعلم معلومات جديدة بطريقة مرحة ومشوقة.' ,
+    title: 'التعليم',
+    description: 'من خلال هذه الخدمة، يمكن للأطفال تعلم معلومات جديدة بطريقة مرحة ومشوقة.',
     smallImages: ['/animate/edu1.gif', '/animate/edu2.gif'],  // صور صغيرة على الجانبين
     buttonText: 'ابدأ التعلم',  // نص الزر
-    buttonClass: 'blob-btn' // الكلاس الخاص بالزر الأخير
+    buttonClass: 'blob-btn' ,// الكلاس الخاص بالزر الأخير
+    buttonLink: "http://down-up.utopiaworld.site/"
+
   },
   // أضف المزيد من الكروت هنا حسب الحاجة
 ];
@@ -47,7 +52,7 @@ function Serve() {
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     const cardIndex = Math.floor(scrollPosition / window.innerHeight);
-    
+
     // تحديد الكارد الذي تم الوصول إليه
     if (cardsData[cardIndex]) {
       setBackgroundImage(cardsData[cardIndex].image); // تحديد الصورة الخاصة بكل كارد
@@ -84,7 +89,7 @@ function Serve() {
   useEffect(() => {
     // إضافة مستمع للتمرير
     window.addEventListener('scroll', handleScroll);
-    
+
     // إزالة مستمع التمرير عند الخروج
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -93,12 +98,12 @@ function Serve() {
 
   return (
     <div className="serve">
-      <h1 style={{color:'black'}}>خدماتنا</h1>
+      <h1 style={{ color: 'black' }}>خدماتنا</h1>
       {cardsData.map((card) => (
-        <div 
-          key={card.id} 
-          className="card" 
-          style={{ backgroundColor: cardBackgroundColor }} 
+        <div
+          key={card.id}
+          className="card"
+          style={{ backgroundColor: cardBackgroundColor }}
         >
           <div className="card-image-wrapper">
             <img src={card.image} alt={`Card ${card.id}`} className="card-image" />
@@ -107,7 +112,15 @@ function Serve() {
             <h2 className="card-title">{card.title}</h2>
             <h2 className="card-description">{card.description}</h2>
             {/* إضافة الزر الخاص بكل كارد */}
-            <button className={`card-button ${card.buttonClass}`}>{card.buttonText}</button>
+            <a
+              href={card.buttonLink}
+              className={`card-button ${card.buttonClass}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{textDecoration: "none"}}
+            >
+              {card.buttonText}
+            </a>
           </div>
           {/* إضافة الصور الصغيرة على الجانبين */}
           <div className="small-images">
