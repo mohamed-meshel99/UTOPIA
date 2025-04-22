@@ -1,0 +1,243 @@
+/* Global Styles */
+body {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  background-color: #e9f3f4;
+  text-align: center;
+
+}
+header {
+
+	width: 100%;
+	height: auto;
+
+}
+.animated-gif {
+width: 120px;
+}
+.ritl{
+  direction: rtl;
+  text-align: right;
+}
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 130px;
+	margin-bottom: 10px;
+  margin-top:15px;
+  color: #003135;
+}
+h3 ,p{
+  font-size: 25px;
+  color: #41676a;
+
+}
+h2{
+  font-size: 50px;
+  color: #03373c;
+
+}
+
+span{
+  font-size: 35px;
+  color: #0d464b;
+
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  
+}
+
+.nav-bar {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar .logo {
+  font-size: 24px;
+}
+
+.nav-icons {
+  font-size: 18px;
+}
+
+/* تغيير الشريط الجانبي ليبدأ من الجهة اليسرى ويأخذ العرض كامل */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #19282ade;
+  color: #fff;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.455);
+  z-index: 1000;
+  overflow-y: auto;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* تغيير حجم النص داخل الشريط الجانبي ليناسب الحجم الجديد */
+.sidebar ul li {
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  width: 100%;
+}
+
+
+
+.sidebar ul li:hover {
+background-color: #23696e;
+border-radius: 10px;
+
+
+}
+.sidebar ul li:active {
+  transform: scale(1.1);
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+
+.content {
+  margin-top: 110px; 
+  margin-left: 250px; 
+}
+.about{
+  background-color:#032428;
+  padding: 60px;
+}
+button{
+  padding: 20px 50px;
+  margin-top: 15px;
+  border: none;
+  background-color: #02444a;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  transition: 0.5s;
+
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 90px; /* جعل عرض الشريط الجانبي أصغر على الشاشات المتوسطة */
+  }
+
+  .content {
+    margin-left: 90px; /* ضبط المحتوى ليناسب العرض الجديد */
+  }
+  .welcome{
+    margin-left: 50px;
+
+
+  }
+  .nav-bar {
+    flex-direction: column; /* تغيير ترتيب العناصر في الشريط العلوي */
+    align-items: flex-start;
+  }
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+    margin-bottom: 7px;
+    margin-top:10px;
+    color: #003135;
+  }
+  h3 ,p{
+    font-size: 15px;
+    color: #2a7980;
+  
+  }
+  h2{
+    font-size: 20px;
+    color: #2a7980;
+  
+  }
+  
+  span{
+    font-size: 15px;
+    color: #0d464b;
+  
+  }
+  .animated-gif {
+    width: 70px;
+    }
+    
+
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 75px; /* جعل عرض الشريط الجانبي أصغر أكثر على الشاشات الصغيرة */
+  }
+
+  .sidebar ul li {
+    font-size: 7px; /* تصغير حجم النص داخل الشريط الجانبي */
+    padding: 5px 0;
+  }
+  .welcome{
+    margin-left: 50px;
+
+
+  }
+
+  .nav-bar {
+    padding: 5px; /* تقليل الحواف في الشريط العلوي */
+  }
+
+  .nav-bar .logo {
+    font-size: 10px; /* تقليل حجم الشعار */
+  }
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    margin-bottom: 5px;
+    margin-top:7px;
+    color: #003135;
+  }
+  h3 ,p{
+    font-size: 10px;
+    color: #2a7980;
+  
+  }
+  h2{
+    font-size: 15px;
+    color: #2a7980;
+  
+  }
+  
+  span{
+    font-size: 10px;
+    color: #0d464b;
+  
+  }
+  .animated-gif {
+    width: 70px;
+    }
+    
+
+}

@@ -1,0 +1,83 @@
+/* قاعدة عامة لتطبيق box-sizing فقط داخل الحاوية */
+.blog-container * {
+  box-sizing: border-box;
+}
+
+body.blog {
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  background: hsl(187 40% 98%);
+}
+
+.blog-container {
+  width: 75%;
+  padding: 2rem;
+  height: auto; /* مرونة الحجم */
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* كاردات المقالات */
+.article-card {
+  background: #57938f;
+  width: 90%; /* مرونة العرض */
+  max-width: 300px; /* الحد الأقصى للعرض */
+  aspect-ratio: 3 / 4; /* الحفاظ على النسبة */
+  box-shadow: 0.65rem 0.65rem 0 hsl(187 60% 40% / 1);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: 0.5rem solid;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article-card img {
+  width: 100%; /* جعل الصورة تستوعب عرض الكارد بالكامل */
+  height: auto; /* ارتفاع مرن */
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.article-card h2 {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #fff7f7;
+  margin: 0;
+}
+
+.article-card p {
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .articles {
+      justify-content: space-around;
+  }
+}
+
+@media (max-width: 480px) {
+  .articles {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .article-card {
+      width: 80%;
+      max-width: 250px;
+  }
+}
