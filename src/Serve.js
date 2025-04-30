@@ -11,7 +11,7 @@ const cardsData = [
     title: 'الشات',
     description: 'هنا يمكنك التحدث مع الأطباء والمستخدمين الآخرين من خلال الرسائل النصية أو الصوتية.',
     smallImages: ['/animate/chat1.gif', '/animate/chat2.gif'],  // صور صغيرة على الجانبين
-    buttonText:"] ابدأ الدردشة",  // نص الزر
+    buttonText:" ابدأ الدردشة",  // نص الزر
     buttonClass: 'bubbly-button', // الكلاس الخاص بزر البابلين
     buttonLink: "https://club.utopiaworld.site"
 
